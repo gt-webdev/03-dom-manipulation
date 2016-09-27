@@ -145,7 +145,7 @@ gameArea.on("click", ".illuminati", function() {
 });
 //...
 var beginBossBattle = function() {
-  gameArea.append('<img id="trump" src="http://www.donaldtrumpisanintergalacticwarlord.com/images/donald.png" />');
+  gameArea.append('<img id="trump" src="http://i.imgur.com/0X2Qfk9.gif" />');
   for (var i = 0; i <= 4; i++) {
     $("#health-bar").append('<div class="health-tick"></div>');
   }
