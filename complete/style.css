@@ -1,0 +1,59 @@
+/* This is our stylesheet. It makes everything stylish! */
+
+#game-area {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family:"Comic Sans MS", cursive, sans-serif;
+  background-color: #FFF;
+}
+
+.illuminati {
+  position: absolute;
+  z-index: 1;
+}
+
+#mouse-pointer {
+  position: absolute;
+  cursor: none;
+  pointer-events: none;
+  z-index: 10;
+}
+
+#trump {
+  height: 90%;
+  z-index: 2;
+}
+
+.dank-meme {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+}
+
+#health-bar {
+  position: absolute;
+  z-index: 11;
+  top: 10px;
+  right: 10px;
+  background-color: red;
+}
+
+.health-tick {
+  background-color: yellow;
+  height: 30px;
+  width: 20px;
+}
+
+#winner {
+  z-index: 1;
+  position: absolute;
+  top: calc(50% - 119px);
+  left: calc(50% - 110px);
+}

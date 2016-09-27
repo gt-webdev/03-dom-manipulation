@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <!--- Oh, Hi. You just stumbled on this super high quality piece of code.
+  Perhaps you've seen it featured on the History Channel's Modern Marvels
+  because, you know, it's such a modern marvel. -->
+
+  <!-- Anyay, this is the HTML file. Id doesn't contain much becuse we generate
+  most of the things in this program using JavaScript via the jQuery library -->
+  <head>
+    <!-- This include the jQuery ui CSS stylesheet. I'll explain jQuery UI in a
+    few lines -->
+    <link data-require="jqueryui@1.10.0" data-semver="1.10.0" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/css/smoothness/jquery-ui-1.10.0.custom.min.css" />
+
+    <!-- You can include jQuery by simply requesting it from Google. Keep in
+    mind that jQuery is just a library, and Google is just one of many hosts
+    that you can download it from. You could also download jQuery and host it
+    from your own server -->
+    <script data-require="jquery@*" data-semver="2.2.0" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    <!-- This includes jQuery UI. Base jQuery doesn't do everything you might
+    want (in this case I've included jQuery UI because you can't animate
+    background colours without it), so you can download addon libraries. -->
+    <script data-require="jqueryui@1.10.0" data-semver="1.10.0" src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+    <!-- The following two lines allow us to include our two custom files
+    which you can look at by selecting them on the menu to the left -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <!--You don't need to wory about this one two much. This is an html5 audio tag. It plays the music.-->
+    <audio autoplay="">
+      <source src="https://www.dropbox.com/s/0pu1scqh8rbis46/Knife%20Party%20-%20Destroy%20Them%20With%20Lazers.mp3?raw=1" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- This is the main area where all of our stuff happens. Notice that it
+    doesn't contain much. Just the mouse pointer and an area for the health
+    bar to go -->
+    <div id="game-area">
+      <img id="mouse-pointer" src="https://www.dropbox.com/s/4p7nwp348kgdlfs/crosshair.png?raw=1" />
+      <div id="health-bar"></div>
+    </div>
+  </body>
+
+</html>
