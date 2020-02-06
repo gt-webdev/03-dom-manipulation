@@ -26,7 +26,7 @@ $( document ).ready(function() {
     gameArea.append(dankMemes[illuminatiNumber - 1]);
     illuminatiNumber--;
     if (illuminatiNumber <= 0) {
-      beginBossBattle();
+      hereComeDatBoi();
     }
   });
   var dankMemes = [
@@ -47,26 +47,29 @@ $( document ).ready(function() {
     $("#mouse-pointer").css({ top: event.pageY - 16, left: event.pageX - 16 });
   });
 
-  gameArea.on("click", "#trump", function() {
+  // Hide the default pointer
+  gameArea.css({ cursor: 'none' });
+
+  gameArea.on("click", "#datboi", function() {
     $(".health-tick:first").remove();
-    flashTheDonald();
+    flashDatBoi();
 
     // The length property will tell you how many elements exist that correspond
     // with a specific selector.
     if ($(".health-tick").length === 0) {
-      donaldSaysGoodbye();
+      thereGoesDatBoi();
     }
   });
 });
 
 // THIS GETS EXECUTED FIRST!!!!!!!!!!!!!!!!!!!!!!
 var init = function() {
-  $("#game-area").append('<h1 id="game-title">Sample jQuery</h1>');
+  $("#game-area").append('<h1 id="game-title">Welcome to the Game of the Century</h1>');
   // This is the setTimeout function. It's default in JavaScript, so you don't
-  // need jQuery to use it. This essentiall says "Execute the funtion
-  // 'beginGame' after 8.5 seconds."
-  setTimeout(beginGame, 8500);
-}
+  // need jQuery to use it. This essentially says "Execute the funtion
+  // 'beginGame' after 3 seconds."
+  setTimeout(beginGame, 3000);
+};
 
 // Helper functions for "begin game"
 var colours = ['#FF000', '#00FF00', '#0000FF', '#FFFF00', '#00FFFF', '#FF00FF'];
@@ -74,13 +77,13 @@ var colourIndex = 0;
 var randomColour = function() {
   colourIndex++;
   return colours[colourIndex % colours.length];
-}
+};
 var randomIlluminatiPosition = function() {
   return {
     left: Math.floor(Math.random() * (window.innerWidth - 150)) + "px",
     top: Math.floor(Math.random() * (window.innerHeight - 150)) + "px"
   }
-}
+};
 
 // THIS HAPPENS SECOND!!!!!!!!!!!!!!!!!!!!
 var illuminatiNumber = 0;
@@ -106,20 +109,20 @@ var beginGame = function() {
     illuminati.forEach(function(pyrimid) {
       pyrimid.animate(randomIlluminatiPosition(), 2000);
     });
-  }, 2000)
-}
+  }, 2000);
+};
 
-var beginBossBattle = function() {
-  gameArea.append('<img id="trump" src="http://i.imgur.com/0X2Qfk9.gif" />');
+var hereComeDatBoi = function() {
+  gameArea.append('<img id="datboi" src="http://i.imgur.com/0X2Qfk9.gif" />');
   for (var i = 0; i <= 4; i++) {
     $("#health-bar").append('<div class="health-tick"></div>');
   }
-}
+};
 
-var flashTheDonald = function() {
-  // Here's an example of chaining. This simply says, "Take 0 ms to hide Trump,
-  // then wait 100 ms, then take 0 ms to show Trump, and so on."
-  $("#trump")
+var flashDatBoi = function() {
+  // Here's an example of chaining. This simply says, "Take 0 ms to hide Dat Boi,
+  // then wait 100 ms, then take 0 ms to show Dat Boi, and so on."
+  $("#datboi")
     .hide(0)
     .delay(100)
     .show(0)
@@ -131,9 +134,9 @@ var flashTheDonald = function() {
     .hide(0)
     .delay(100)
     .show(0);
-}
+};
 
-var donaldSaysGoodbye = function() {
+var thereGoesDatBoi = function() {
   gameArea.append('<img id="winner" src="http://i.imgur.com/kRnXEyw.png" />');
-  $("#trump").animate({ marginTop: "300%" });
-}
+  $("#datboi").animate({ marginTop: "300%" });
+};

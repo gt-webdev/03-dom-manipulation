@@ -26,7 +26,7 @@
   z-index: 10;
 }
 
-#trump {
+#datboi {
   top: 20%;
   height: 70%;
   z-index: 2;
@@ -47,7 +47,7 @@
 }
 
 .health-tick {
-  background-color: yellow;
+  background-color: black;
   height: 30px;
   width: 20px;
 }

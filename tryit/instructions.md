@@ -21,6 +21,8 @@ $( document ).ready(function() {
   gameArea.mousemove(function(event) {
     $("#mouse-pointer").css({ top: event.pageY - 16, left: event.pageX - 16 });
   });
+  
+  gameArea.css({ cursor: 'none' });
 });
 
 ```
@@ -39,18 +41,20 @@ $( document ).ready(function() {
   gameArea.mousemove(function(event) {
     $("#mouse-pointer").css({ top: event.pageY - 16, left: event.pageX - 16 });
   });
+  
+  gameArea.css({ cursor: 'none' });
 });
 
 var init = function() {
-  $("#game-area").append('<h1 id="game-title">Sample jQuery</h1>');
+  $("#game-area").append('<h1 id="game-title">Welcome to the Game of the Century</h1>');
 }
 ```
 
 ## 04: Remove something from the DOM after a delay
 ```
 var init = function() {
-  $("#game-area").append('<h1 id="game-title">Sample jQuery</h1>');
-  setTimeout(beginGame, 8500);
+  $("#game-area").append('<h1 id="game-title">Welcome to the Game of the Century</h1>');
+  setTimeout(beginGame, 3000);
 }
 
 var beginGame = function() {
@@ -140,12 +144,12 @@ gameArea.on("click", ".illuminati", function() {
 gameArea.on("click", ".illuminati", function() {
   // ...
   if (illuminatiNumber <= 0) {
-    beginBossBattle();
+    hereComeDatBoi();
   }
 });
 //...
-var beginBossBattle = function() {
-  gameArea.append('<img id="trump" src="http://i.imgur.com/0X2Qfk9.gif" />');
+var hereComeDatBoi = function() {
+  gameArea.append('<img id="datboi" src="http://i.imgur.com/0X2Qfk9.gif" />');
   for (var i = 0; i <= 4; i++) {
     $("#health-bar").append('<div class="health-tick"></div>');
   }
@@ -155,20 +159,20 @@ var beginBossBattle = function() {
 ## 09: Decrease the bosses health using an advanced selector
 Inside $( document ).ready
 ```
-gameArea.on("click", "#trump", function() {
+gameArea.on("click", "#datboi", function() {
   $(".health-tick:first").remove();
 });
 ```
 
 ## 10: Flash the Donald using chaining
 ```
-gameArea.on("click", "#trump", function() {
+gameArea.on("click", "#datboi", function() {
   $(".health-tick:first").remove();
-  flashTheDonald();
+  flashDatBoi();
 });
 // ...
-var flashTheDonald = function() {
-  $("#trump")
+var flashDatBoi = function() {
+  $("#datboi")
     .hide(0)
     .delay(100)
     .show(0)
@@ -185,16 +189,16 @@ var flashTheDonald = function() {
 
 ## 11: Animate the Game Win State
 ```
-gameArea.on("click", "#trump", function() {
+gameArea.on("click", "#datboi", function() {
   $(".health-tick:first").remove();
-  flashTheDonald();
+  flashDatBoi();
   if ($(".health-tick").length === 0) {
-    donaldSaysGoodbye();
+    thereGoesDatBoi();
   }
 });
 // ...
-var donaldSaysGoodbye = function() {
+var thereGoesDatBoi = function() {
   gameArea.append('<img id="winner" src="http://i.imgur.com/kRnXEyw.png" />');
-  $("#trump").animate({ marginTop: "300%" });
+  $("#datboi").animate({ marginTop: "300%" });
 }
 ```
